@@ -7,16 +7,21 @@
   <title>Прайс-лист - Барбершоп «Бородинский»</title>
   <meta name="description" content="">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
 
 <body>
-  <header>
+
+  <header class="header">
     <a href="/">
       <img src="img/logo.svg" alt="Логотип барбершопа Бородинский." width="111" height="24">
     </a>
-    <nav>
+    <nav class="site-nav">
       <ul>
         <li><a href="#">Информация</a></li>
         <li><a href="#">Новости</a></li>
@@ -25,20 +30,21 @@
         <li><a href="#">Контакты</a></li>
       </ul>
     </nav>
-    <ul>
-      <li><a href="#">Вход</a></li>
-    </ul>
+    <a class="login-link" href="#">Вход</a>
   </header>
 
   <main>
-    <h1>Прайс-лист</h1>
-    <ul>
-      <li><a href="/">Главная</a></li>
-      <li><a>Прайс-лист</a></li>
-    </ul>
-    <p>Истинно мужская классика</p>
+    <h1 class="main-title">Прайс-лист</h1>
+    <div class="breadcrumbs">
+      <ul>
+        <li class="breadcrumbs-item"><a href="/">Главная</a></li>
+        <li class="breadcrumbs-item"><a>Прайс-лист</a></li>
+      </ul>
+    </div>
 
-    <section>
+    <p class="slogan">Истинно мужская классика</p>
+
+    <section class="brands">
       <h2>Мы используем только лучшие средства:</h2>
       <ul>
         <li>Baxter of California</li>
@@ -48,25 +54,25 @@
       </ul>
     </section>
 
-    <section>
+    <section class="prices">
       <h2>Цены на услуги наших мастеров:</h2>
       <table>
         <tr>
           <td>Стрижка</td>
-          <td>1500 ₽</td>
+          <td class="prices-value">1500 ₽</td>
         </tr>
         <tr>
           <td>Стрижка бороды</td>
-          <td>500 ₽</td>
+          <td class="prices-value">500 ₽</td>
         </tr>
         <tr>
           <td>Накрутка усов</td>
-          <td>350 ₽</td>
+          <td class="prices-value">350 ₽</td>
         </tr>
       </table>
     </section>
 
-    <section>
+    <section class="about-us">
       <h2>Несколько слов о нас:</h2>
       <p>Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.</p>
       <p>Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!</p>
@@ -74,8 +80,8 @@
 
   </main>
 
-  <footer>
-    <div>
+  <footer class="footer">
+    <div class="footer-contacts">
       <p>
         Барбершоп «Бородинский»<br>
         Адрес: г. Санкт-петербург, ул. Б. Конюшенная, д. 19/8<br>
@@ -83,17 +89,17 @@
         Телефон: +7 (495) 666-02-66
       </p>
     </div>
-    <div>
+    <div class="footer-socials">
       <p>Давайте дружить!</p>
       <ul>
-        <li><a href="#">vk</a></li>
-        <li><a href="#">fb</a></li>
-        <li><a href="#">insta</a></li>
+        <li><a class="social-button" href="#">vk</a></li>
+        <li><a class="social-button" href="#">fb</a></li>
+        <li><a class="social-button" href="#">insta</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-copyright">
       <p>Разработано:</p>
-      <a href="https://htmlacademy.ru/">HTML Academy</a>
+      <a class="button copyright-button" href="https://htmlacademy.ru/">HTML Academy</a>
     </div>
   </footer>
 

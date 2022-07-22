@@ -7,17 +7,21 @@
   <title>Набор для путешествий «Baxter of California» - Барбершоп «Бородинский»</title>
   <meta name="description" content="">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
 
 <body>
 
-  <header>
+  <header class="header">
     <a href="/">
       <img src="img/logo.svg" alt="Логотип барбершопа Бородинский." width="111" height="24">
     </a>
-    <nav>
+    <nav class="site-nav">
       <ul>
         <li><a href="#">Информация</a></li>
         <li><a href="#">Новости</a></li>
@@ -26,22 +30,22 @@
         <li><a href="#">Контакты</a></li>
       </ul>
     </nav>
-    <ul>
-      <li><a href="#">Вход</a></li>
-    </ul>
+    <a class="login-link" href="#">Вход</a>
   </header>
 
   <main>
-    <h1>Набор для путешествий «Baxter of California»</h1>
-    <ul>
-      <li><a href="/">Главная</a></li>
-      <li><a href="/">Магазин</a></li>
-      <li><a href="/">Средства для ухода</a></li>
-      <li><a>Набор для путешествий «Baxter of California»</a></li>
-    </ul>
+    <h1 class="main-title">Набор для путешествий «Baxter of California»</h1>
+    <div class="breadcrumbs">
+      <ul>
+        <li class="breadcrumbs-item"><a href="/">Главная</a></li>
+        <li class="breadcrumbs-item"><a href="/">Магазин</a></li>
+        <li class="breadcrumbs-item"><a href="/">Средства для ухода</a></li>
+        <li class="breadcrumbs-item"><a>Набор для путешествий «Baxter of California»</a></li>
+      </ul>
+    </div>
 
     <section>
-      <h2>Фотографии товара</h2>
+      <h2 class="visually-hidden">Фотографии товара</h2>
       <a href="#">
         <img src="img/product-photos-main.jpg" alt="Набор для путешествий «Baxter of California»." width="460" height="498">
       </a>
@@ -56,12 +60,15 @@
       </a>
     </section>
 
-    <section>
-      <h2>Описание товара</h2>
+    <section class="product-desc">
+      <h2 class="visually-hidden">Описание товара</h2>
       <p>Есть в наличии</p>
-      <p>Артикул: DEXTER-AE</p>
+      <p class="product-art">Артикул: DEXTER-AE</p>
       <p>Travel Kit – необходимый аксессуар во время любого путешествия. В аккуратной кожаной сумке находится все, что нужно для бритья и ухода за кожей во время рабочей поездки или отдыха: средство для умывания, увлажняющий крем, крем для бритья, крем после бритья, шампунь. Набор также может стать отличным подарком.</p>
-      <p>2 900 ₽<button type="button">Купить</button></p>
+      <div class="product-cost">
+        <span>2 900 ₽</span>
+        <button class="button" type="button">Купить</button>
+      </div>
 
       <h3>В набор входят:</h3>
       <ul>
@@ -74,8 +81,8 @@
     </section>
   </main>
 
-  <footer>
-    <div>
+  <footer class="footer">
+    <div class="footer-contacts">
       <p>
         Барбершоп «Бородинский»<br>
         Адрес: г. Санкт-петербург, ул. Б. Конюшенная, д. 19/8<br>
@@ -83,17 +90,17 @@
         Телефон: +7 (495) 666-02-66
       </p>
     </div>
-    <div>
+    <div class="footer-socials">
       <p>Давайте дружить!</p>
       <ul>
-        <li><a href="#">vk</a></li>
-        <li><a href="#">fb</a></li>
-        <li><a href="#">insta</a></li>
+        <li><a class="social-button" href="#">vk</a></li>
+        <li><a class="social-button" href="#">fb</a></li>
+        <li><a class="social-button" href="#">insta</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-copyright">
       <p>Разработано:</p>
-      <a href="https://htmlacademy.ru/">HTML Academy</a>
+      <a class="button copyright-button" href="https://htmlacademy.ru/">HTML Academy</a>
     </div>
   </footer>
 
