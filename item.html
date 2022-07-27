@@ -18,22 +18,24 @@
 <body>
 
   <header class="header">
-    <a href="/">
-      <img src="img/logo.svg" alt="Логотип барбершопа Бородинский." width="111" height="24">
-    </a>
-    <nav class="site-nav">
-      <ul>
-        <li><a href="#">Информация</a></li>
-        <li><a href="#">Новости</a></li>
-        <li><a href="#">Прайс-лист</a></li>
-        <li><a>Магазин</a></li>
-        <li><a href="#">Контакты</a></li>
-      </ul>
-    </nav>
-    <a class="login-link" href="#">Вход</a>
+    <div class="container">
+      <a href="/">
+        <img src="img/logo.svg" alt="Логотип барбершопа Бородинский." width="111" height="24">
+      </a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a href="#">Прайс-лист</a></li>
+          <li><a>Магазин</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+      <a class="login-link" href="#">Вход</a>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <h1 class="main-title">Набор для путешествий «Baxter of California»</h1>
     <div class="breadcrumbs">
       <ul>
@@ -44,20 +46,23 @@
       </ul>
     </div>
 
-    <section>
+    <div class="product-desc-wrapper">
+    <section class="product-photos">
       <h2 class="visually-hidden">Фотографии товара</h2>
       <a href="#">
         <img src="img/product-photos-main.jpg" alt="Набор для путешествий «Baxter of California»." width="460" height="498">
       </a>
-      <a href="#">
-        <img src="img/product-photos-small-1.jpg" alt="Набор для путешествий «Baxter of California»." width="140" height="149">
-      </a>
-      <a href="#">
-        <img src="img/product-photos-small-2.jpg" alt="Набор для путешествий «Baxter of California»." width="140" height="149">
-      </a>
-      <a href="#">
-        <img src="img/product-photos-small-3.jpg" alt="Набор для путешествий «Baxter of California»." width="140" height="149">
-      </a>
+      <div class="product-photos-small">
+        <a href="#">
+          <img src="img/product-photos-small-1.jpg" alt="Набор для путешествий «Baxter of California»." width="140" height="149">
+        </a>
+        <a href="#">
+          <img src="img/product-photos-small-2.jpg" alt="Набор для путешествий «Baxter of California»." width="140" height="149">
+        </a>
+        <a href="#">
+          <img src="img/product-photos-small-3.jpg" alt="Набор для путешествий «Baxter of California»." width="140" height="149">
+        </a>
+      </div>
     </section>
 
     <section class="product-desc">
@@ -79,28 +84,32 @@
         <li>Удобная кожаная косметичка</li>
       </ul>
     </section>
+
+    </div>
   </main>
 
   <footer class="footer">
-    <div class="footer-contacts">
-      <p>
-        Барбершоп «Бородинский»<br>
-        Адрес: г. Санкт-петербург, ул. Б. Конюшенная, д. 19/8<br>
-        <a href="#">Как нас найти?</a><br>
-        Телефон: +7 (495) 666-02-66
-      </p>
-    </div>
-    <div class="footer-socials">
-      <p>Давайте дружить!</p>
-      <ul>
-        <li><a class="social-button" href="#">vk</a></li>
-        <li><a class="social-button" href="#">fb</a></li>
-        <li><a class="social-button" href="#">insta</a></li>
-      </ul>
-    </div>
-    <div class="footer-copyright">
-      <p>Разработано:</p>
-      <a class="button copyright-button" href="https://htmlacademy.ru/">HTML Academy</a>
+    <div class="container">
+      <div class="footer-contacts">
+        <p>
+          Барбершоп «Бородинский»<br>
+          Адрес: г. Санкт-петербург, ул. Б. Конюшенная, д. 19/8<br>
+          <a href="#">Как нас найти?</a><br>
+          Телефон: +7 (495) 666-02-66
+        </p>
+      </div>
+      <div class="footer-socials">
+        <p>Давайте дружить!</p>
+        <ul>
+          <li><a class="social-button" href="#">vk</a></li>
+          <li><a class="social-button" href="#">fb</a></li>
+          <li><a class="social-button" href="#">insta</a></li>
+        </ul>
+      </div>
+      <div class="footer-copyright">
+        <p>Разработано:</p>
+        <a class="button copyright-button" href="https://htmlacademy.ru/">HTML Academy</a>
+      </div>
     </div>
   </footer>
 
