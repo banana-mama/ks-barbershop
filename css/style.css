@@ -436,13 +436,11 @@ a {
   flex-grow: 1;
 }
 
-.products-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.products-item {
-  width: 220px;
+.products-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
 }
 
 .products span {
