@@ -19,8 +19,18 @@ body {
   background-repeat: repeat; 
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
@@ -38,12 +48,21 @@ a {
 
   background-color: #000000;
   border: none;
+  display: inline-block;
+  padding: 10px 0;
+  width: 140px;
+  margin-right: 16px;
 }
 
 .button:hover,
 .button:focus,
 .button:active {
   background-color: #663d15;
+}
+
+.button:disabled,
+.button.disabled {
+
 }
 
 .visually-hidden {
@@ -63,7 +82,7 @@ a {
   background-color: #000000;
   background-image: url("../img/bg.jpg");
   background-position: top center;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -72,20 +91,19 @@ a {
 
   background-color: #000000;
 
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-
-  margin-bottom: 80px;
+  margin-bottom: 66px;
 }
 
 .index-content .header {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
   background-color: transparent;
 }
 
 .header-nav-wrapper {
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 62px;
   background-color: #000000;
 }
 
@@ -95,26 +113,60 @@ a {
 
 .login-link {
   margin-left: auto;
+  padding: 25px 22px;
+  padding-left: 55px;
+  position: relative;
+}
+
+.login-link::before {
+  position: absolute;
+  content: "";
+  background-image: url("../img/login.svg");
+  width: 16px;
+  height: 16px;
+  left: 25px;
+  top: 27px;
+  opacity: 0.3;
 }
 
 .site-nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .header a {
   color: #ffffff;
 }
 
+.site-nav a {
+  display: block;
+  padding: 25px 20px;
+}
+
 .site-nav a:focus,
 .site-nav a:hover,
+.site-nav a:active,
 .login-link:focus,
-.login-link:hover {
+.login-link:hover,
+.login-link:active {
   background-color: #242424;
+}
+
+.login-link:focus::before,
+.login-link:hover::before,
+.login-link:active::before {
+  opacity: 1;
 }
 
 .main-title {
   font-size: 30px;
   line-height: 42px;  
+}
+
+.features {
+  margin-bottom: 78px;
 }
 
 .features-list {
@@ -129,32 +181,55 @@ a {
 
 .feature-item {
   text-align: center;
-  width: 291px;
+  width: 300px;
 }
 
-.feature-item h3 {
+.feature-item-title {
   font-size: 30px;
   line-height: 42px;
+  margin: 0;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.feature-item-title::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  top: 53px;
+  left: 50%;
+  margin-left: -10px;
+  transform: rotate(45deg);
+}
+
+.feature-item p {
+  padding: 0 5px;
+  margin: 0;
 }
 
 .index-cols {
   color: #000000;
 
   background-color: #f5f2ef;
-  background-image: url("../img/light-bg.png");
-  background-position: 0 0;
-  background-repeat: repeat;
+  background-image: url("../img/section-line.png"),
+                    url("../img/light-bg.png");
+  background-position: center, 0 0;
+  background-repeat: no-repeat, repeat;
 
   display: flex;
   justify-content: space-between;
 
-  padding: 50px 80px;
+  padding: 45px 80px 50px;
   margin-bottom: 36px;
 }
 
 .index-cols h2 {
   font-size: 30px;
   line-height: 42px;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .news {
@@ -163,6 +238,17 @@ a {
 
 .news-list {
   list-style: none;
+  padding-left: 0;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.news-list li {
+  margin-bottom: 20px;
+}
+
+.news-list p {
+  margin: 0;
 }
 
 .news-list time {
@@ -171,31 +257,90 @@ a {
 
 .gallery {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .gallery-content {
+  box-sizing: content-box;
+  height: 164px;
   background-color: #e5e5e5;
   border: 7px solid #ffffff;
+}
+
+.gallery-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery-button {
+  width: 140px;
+  margin: 0;
 }
 
 .contacts {
   width: 350px;
 }
 
+.contacts p {
+  margin-bottom: 19px;
+}
+
 .book {
   width: 300px;
 }
 
+.book p {
+  margin: 0;
+  margin-bottom: 9px;
+}
+
+.book-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.book-item {
+  width: 140px;
+}
+
+.book-item span {
+  display: block;
+  padding-left: 17px;
+  margin-bottom: 7px;
+}
+
 .book-item input {
   font: inherit;
+  width: 100%;
+  height: 43px;
+  padding-left: 14px;
+  background-color: #f9f6f3;
 
   border: 2px solid #000000;
+}
+
+.book-item input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.book-item input[type="date"],
+.book-item input[type="time"] {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .book-item input:focus,
 .book-item input:focus-visible {
   border-color: #663d15;
   outline-color: #663d15;
+}
+
+.book-form .button {
+  width: 100%;
+  margin: 0;
+  margin-top: 11px;
 }
 
 .footer {
@@ -205,6 +350,8 @@ a {
   background-image: url("../img/dark-bg.png");
   background-position: 0 0;
   background-repeat: repeat;
+
+  padding-top: 44px;
 
   margin-top: 50px;
 }
@@ -218,7 +365,7 @@ a {
 }
 
 .footer-contacts {
-  margin-right: 93px;
+  margin-right: auto;
 }
 
 .footer-contacts a {
@@ -233,15 +380,23 @@ a {
 
 .footer-socials {
   text-align: center;
+  width: 140px;
 }
 
 .footer-socials ul {
   list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .social-button {
-  color: #ffffff;
   background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 43px;
 }
 
 .social-button:hover,
@@ -253,13 +408,21 @@ a {
 .footer-copyright {
   text-align: center;
 
-  margin-left: auto; 
+  margin-left: 260px;
+}
+
+.copyright-button {
+  margin: 0;
 }
 
 .copyright-button:hover,
 .copyright-button:focus {
   color: #000000;
   background-color: #ffffff;  
+}
+
+.pop-up {
+  position: relative;
 }
 
 .pop-up-login {
@@ -269,19 +432,61 @@ a {
   background-image: url("../img/light-bg.png");
   background-position: 0 0;
   background-repeat: repeat;
+
+  width: 460px;
+  padding: 45px 80px 60px;
 }
 
 .pop-up h2 {
   font-size: 30px;
   line-height: 42px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.login-desc {
+  margin-bottom: 11px;
+}
+
+.login-item {
+  margin: 0;
+  position: relative;
 }
 
 .login-item input[type="text"],
 .login-item input[type="password"] {
   font: inherit;
   text-transform: uppercase;
+  background-color: #f9f6f3;
+  width: 100%;
+  height: 43px;
+  padding-left: 14px;
+  padding-right: 40px;
 
   border: 2px solid #000000;
+  margin-bottom: 9px;
+}
+
+.login-item input::placeholder{
+  color: #000000;
+}
+
+.login-item-login::after,
+.login-item-password::after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  top: 15px;
+  right: 15px;
+}
+
+.login-item-login::after {
+  background-image: url("../img/user.svg");
+}
+
+.login-item-password::after {
+  background-image: url("../img/lock.svg");
 }
 
 .login-item input[type="text"]:focus,
@@ -294,9 +499,51 @@ a {
 
 .login-item-checkbox {
   line-height: 18px;
+  margin-top: 9px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.login-item-checkbox:hover {
+.checkbox label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 31px;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-cross {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #000000;
+}
+
+.checkbox-cross::after {
+  content: "";
+  position: absolute;
+  display: none;
+  width: 12px;
+  height: 12px;
+  background-image: url("../img/cross.svg");
+  top: 2px;
+  left: 2px;
+}
+
+.checkbox input:checked ~ .checkbox-cross::after {
+   display: block;
+ }
+
+.checkbox label:hover {
   color: #663d15;
 }
 
@@ -308,6 +555,37 @@ a {
 .login-form a:hover,
 .login-form a:focus {
   text-decoration: none;
+}
+
+.login-form button {
+  width: 100%;
+}
+
+.close-button {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border: none;
+  top: 8px;
+  right: -33px;
+  background-color: transparent;
+  background-image: url("../img/cross-white.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+}
+
+.close-button:hover,
+.close-button:focus {
+  opacity: 1;
+}
+
+.pop-up-map {
+  width: 780px;
+  height: 574px;
+  padding: 7px;
+  background-color: #ffffff;
 }
 
 .breadcrumbs {
