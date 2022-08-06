@@ -91,7 +91,7 @@ button {
 
   background-color: #000000;
 
-  margin-bottom: 66px;
+  margin-bottom: 50px;
 }
 
 .index-content .header {
@@ -109,6 +109,10 @@ button {
 
 .header .container {
   display: flex;
+}
+
+.header-logo-small {
+  padding: 22px 20px 0;
 }
 
 .login-link {
@@ -142,7 +146,7 @@ button {
 
 .site-nav a {
   display: block;
-  padding: 25px 20px;
+  padding: 0 20px;
 }
 
 .site-nav a:focus,
@@ -154,6 +158,16 @@ button {
   background-color: #242424;
 }
 
+.site-nav-tab {
+  display: block;
+  padding: 25px 0;
+}
+
+.site-nav-tab-active {
+  padding-bottom: 21px;
+  border-bottom: 4px solid #ffffff;
+}
+
 .login-link:focus::before,
 .login-link:hover::before,
 .login-link:active::before {
@@ -162,7 +176,8 @@ button {
 
 .main-title {
   font-size: 30px;
-  line-height: 42px;  
+  line-height: 42px;
+  margin: 0;
 }
 
 .features {
@@ -590,18 +605,50 @@ button {
 
 .breadcrumbs {
   margin-bottom: 55px;
+  margin-top: 15px;
+}
+
+.breadcrumbs ul{
+  margin: 0;
+  padding: 0;
 }
 
 .breadcrumbs ul {
   list-style: none;
+  display: flex;
 }
 
 .breadcrumbs a {
   color: #000000;
 }
 
-.breadcrumbs-item:last-child a {
+.breadcrumbs-item {
+  margin-right: 40px;
+  position: relative;
+}
+
+.breadcrumbs-item::after {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  transform: rotate(45deg);
+  top: 8px;
+  right: -25px;
+}
+
+.breadcrumbs-item-current {
+  margin: 0;
+}
+
+.breadcrumbs-item-current::after {
+  content: none;
+}
+
+.breadcrumbs-item-current a {
   color: #aba9a7;
+  cursor: default;
 }
 
 .product-desc-wrapper {
@@ -640,10 +687,31 @@ button {
 }
 
 .slogan {
+  position: relative;
+  margin-bottom: 62px;
+}
+
+.slogan hr {
+  border: none;
+  border-bottom: 2px solid;
+  padding-top: 15px;
+}
+
+.slogan p {
+  position: absolute;
+  background-image: url("../img/light-bg.png");
+  background-position: 0 0;
+  background-repeat: repeat;
+
+  margin: 0;
+  width: 621px;
+  text-align: center;
+  top: -10px;
+  left: 50%;
+  margin-left: -310px;
+
   font-size: 48px;
   line-height: 48px;
-
-  text-align: center;
 }
 
 .brands-prices-wrapper {
