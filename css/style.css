@@ -3,8 +3,11 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-size: 14px;
@@ -56,8 +59,14 @@ button {
 }
 
 .button:disabled,
-.button.disabled {
-
+.button.disabled,
+.button:disabled:hover,
+.button.disabled:hover,
+.button.disabled:focus,
+.button.disabled:active {
+  cursor: default;
+  background-color: #000000;
+  opacity: 0.3;
 }
 
 .radiobutton label {
@@ -94,15 +103,21 @@ button {
   border-radius: 50%;
   background-color: #000000;
   top: 4px;
-  left: 4px;
+  left: 5px;
  }
 
 .radiobutton input:checked ~ .radiobutton-marker::after {
   display: block;
 }
 
+.radiobutton label:focus-within {
+  outline: 1px solid #000000;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
 .radiobutton label:hover,
-.radiobutton label:focus {
+.radiobutton label:focus-within {
   color: #663d15;
 }
 
@@ -144,8 +159,14 @@ button {
   display: block;
 }
 
+.checkbox label:focus-within {
+  outline: 1px solid;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
 .checkbox label:hover,
-.checkbox label:focus {
+.checkbox label:focus-within {
   color: #663d15;
 }
 
@@ -204,6 +225,7 @@ button {
   flex-direction: column-reverse;
   align-items: center;
   background-color: transparent;
+  margin-bottom: 66px;
 }
 
 .header-nav-wrapper {
@@ -350,6 +372,10 @@ button {
   margin-bottom: 36px;
 }
 
+.contacts-book {
+  margin-bottom: 65px;
+}
+
 .index-cols h2 {
   font-size: 30px;
   line-height: 42px;
@@ -478,12 +504,7 @@ button {
 
   padding-top: 44px;
   padding-bottom: 20px;
-
-  margin-top: 50px;
-}
-
-.index-content .footer {
-  margin-top: 65px;
+  margin-top: auto;
 }
 
 .footer .container {
@@ -703,6 +724,16 @@ button {
   position: relative;
 }
 
+.breadcrumbs-item a:hover,
+.breadcrumbs-item a:focus {
+  opacity: 0.6;
+}
+
+.breadcrumbs-item-current a:hover,
+.breadcrumbs-item-current a:focus {
+  opacity: 1;
+}
+
 .breadcrumbs-item::after {
   position: absolute;
   content: "";
@@ -730,6 +761,7 @@ button {
 .product-desc-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .product-photos {
@@ -756,7 +788,15 @@ button {
 
 .product-photos-small {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.products-desc-name {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .product-desc-top-wrapper {
@@ -898,6 +938,7 @@ button {
 .shop-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .filter {
