@@ -574,11 +574,18 @@ button {
 }
 
 .pop-up {
-  position: relative;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+
   display: none;
+
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
 }
 
 .pop-up-login {
+  margin-left: -230px;
+
   color: #000000;
 
   background-color: #f5f2ef;
@@ -693,6 +700,7 @@ button {
 }
 
 .pop-up-map {
+  margin-left: -390px;
   width: 780px;
   height: 574px;
   padding: 7px;
