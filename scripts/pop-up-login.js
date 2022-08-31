@@ -9,6 +9,8 @@ var remember = loginPopup.querySelector(".login-item-checkbox input");
 var isStorageSupport = true;
 var storageLogin = "";
 
+loginForm.noValidate = true;
+
 try {
     storageLogin = localStorage.getItem("login");
 } catch (err) {
@@ -48,6 +50,8 @@ loginForm.addEventListener("submit", function (evt){
         loginPopup.classList.remove("pop-up-error");
         loginPopup.offsetWidth = loginPopup.offsetWidth;
         loginPopup.classList.add("pop-up-error");
+        if (!login.value) { login.focus(); }
+        else { password.focus(); }
     }
     else {
         if (remember.checked && isStorageSupport){
